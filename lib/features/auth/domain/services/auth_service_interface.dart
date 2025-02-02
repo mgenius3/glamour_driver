@@ -11,16 +11,19 @@ abstract class AuthServiceInterface {
   String getUserToken();
   bool isLoggedIn();
   Future<bool> clearSharedData();
-  Future<void> saveUserNumberAndPassword(String number, String password, String countryCode);
+  Future<void> saveUserNumberAndPassword(
+      String number, String password, String countryCode);
   String getUserNumber();
   String getUserCountryCode();
   String getUserPassword();
   bool isNotificationActive();
   void setNotificationActive(bool isActive);
   Future<bool> clearUserNumberAndPassword();
-  Future<bool> registerDeliveryMan(DeliveryManBodyModel deliveryManBody, List<MultipartBody> multiParts);
+  Future<bool> registerDeliveryMan(
+      DeliveryManBodyModel deliveryManBody, List<MultipartBody> multiParts);
   Future<List<VehicleModel>?> getVehicleList();
-  List<MultipartBody> prepareMultiPartsBody(XFile? pickedImage, List<XFile> pickedIdentities);
-  List<int?> vehicleIds (List<VehicleModel>? vehicles);
+  List<MultipartBody> prepareMultiPartsBody(
+      XFile? pickedImage, List<XFile> pickedIdentities);
+  List<int?> vehicleIds(List<VehicleModel>? vehicles);
   Future<XFile?> pickImageFromGallery();
 }
